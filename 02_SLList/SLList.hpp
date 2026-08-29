@@ -11,7 +11,9 @@ class SLList{
     bool        empty() const; // Return true if list is empty
     void        push_front(int val); // Insert the node at the beginning
     void        print() const; // Print the list
+    void        push_back(int val);
     //TODO: void push_back in the end
+
 
 
     private: 

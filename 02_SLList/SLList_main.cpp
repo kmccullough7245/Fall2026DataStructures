@@ -7,6 +7,7 @@ int main(void) {
     list.push_front(20);
     list.push_front(30);
     list.push_front(40);
+    list.push_back(5);
 
     list.print();
     std::cout << list.size() << std::endl;
