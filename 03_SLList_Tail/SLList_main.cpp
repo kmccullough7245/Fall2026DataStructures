@@ -10,14 +10,14 @@ int main(void) {
     list.push_back(5);
 
     list.print();
-    list.pop_front();
+    list.pop_back();
     std::cout << std::endl;
     list.print();
     std::cout << std::endl;
-    std::cout << list.size() << std::endl;
-    list.clear();
-    list.print();
-    std::cout << std::endl;
+
+    SLList list2 = list;
+    list2.print();
+
     return 0;
 
 }

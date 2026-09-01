@@ -8,7 +8,6 @@ class SLList{
     // No arg constructor
     SLList();
     ~SLList();
-    // TODO 1 the copy conductor 2 the assignment operator
     SLList(const SLList& other);
     SLList& operator=(const SLList& other);
     unsigned    size() const; // Return the size of the list
@@ -17,7 +16,6 @@ class SLList{
     void        print() const; // Print the list
     void        push_back(int val);
     void        pop_front(void); // Remove the first node from the list 
-    //TODO Pop Back
     void        pop_back(void); // Remove the last node from the list
     void        clear(void);
 
