@@ -15,7 +15,7 @@ class DLList{
     //bool        empty() const; // Return true if list is empty
     void        push_front(const T& val); // Insert the node at the beginning
     void        print() const; // Print the list
-    //void        push_back(int val);
+    void        push_back(const T& val);
     //void        pop_front(void); // Remove the first node from the list 
     //void        pop_back(void); // Remove the last node from the list
     //void        clear(void);
@@ -26,5 +26,7 @@ class DLList{
     DLLNode<T>* tail; // Last node in the linked list
     unsigned list_size; // The nmber of nodes in the linked list
 };
+
+#include "DLList.tpp"
 
 #endif
