@@ -1,23 +1,22 @@
 #include "SLList.hpp"
 #include <iostream>
 
+
 int main(void) {
-    SLList list;
-    list.push_front(10);
-    list.push_front(20);
-    list.push_front(30);
-    list.push_front(40);
-    list.push_back(5);
-
-    list.print();
-    list.pop_back();
-    std::cout << std::endl;
-    list.print();
-    std::cout << std::endl;
-
-    SLList list2 = list;
-    list2.print();
-
-    return 0;
-
+SLList list;
+for (int i = 0; i < 100; i++) {
+if (i % 4 == 0) {
+list.push_front(i * 2);
+list.push_back(i * 2);
+}
+if (i % 5 == 2 || i % 5 == 3) {
+list.pop_back();
+}
+}
+std::cout << (char) (list.at(0) - 127);
+std::cout << (char) (list.at(1) - 108);
+std::cout << (char) (list.at(2) - 95);
+std::cout << (char) (list.at(3) - 101);
+std::cout << (char) (list.at(4) - 83) << std::endl;
+return 0;
 }

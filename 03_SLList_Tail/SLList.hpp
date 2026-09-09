@@ -18,6 +18,7 @@ class SLList{
     void        pop_front(void); // Remove the first node from the list 
     void        pop_back(void); // Remove the last node from the list
     void        clear(void);
+    int& at(unsigned index); // Return the value of the node at index
 
     private: 
     SLLNode* head; // First node in the linked list

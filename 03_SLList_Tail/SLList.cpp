@@ -1,5 +1,6 @@
 #include "SLList.hpp"
 #include <iostream>
+#include <stdexcept>
 
 
 SLList::SLList() : head(nullptr), tail(nullptr), list_size(0) {
@@ -130,7 +131,6 @@ void SLList::pop_back(void) {
         if (empty()) { // If the last node was deleted
             head = tail; // Update the tail
         }
-
     }
 }
 
@@ -138,4 +138,15 @@ void SLList::clear(void) {
     while(!empty()) {
         pop_front();
     }
+}
+
+int& SLList::at(unsigned index){
+    if (index >= size()) {
+        throw std::logic_error("at: incorrect index");
+    }
+    SLLNode* cur = head;
+    for (int i = 0; i < index; i++) {
+        cur = cur->next;
+    }
+    return cur->data;             
 }

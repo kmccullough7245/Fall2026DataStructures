@@ -30,13 +30,17 @@ int main(void) {
  
     // Assignment Change the output to have arrows between numbers and no arrows at the end
     SLLNode* cur = n1;
-    while (cur != nullptr) {
-        if (cur->next != nullptr) {
-            std::cout << cur->data << "->"; // access the data of the current node
-        } else {
-            std::cout << cur->data << std::endl; // access the data of the current node
-        }
+    // while (cur != nullptr) {
+    //     if (cur->next != nullptr) {
+    //         std::cout << cur->data << "->"; // access the data of the current node
+    //     } else {
+    //         std::cout << cur->data << std::endl; // access the data of the current node
+    //     }
         
+    //     cur = cur->next;
+    // }
+    while(cur->next) {
+        std::cout << cur->data << "->";
         cur = cur->next;
     }
 
