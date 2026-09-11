@@ -134,12 +134,16 @@ void CLList<T>::clear(void) {
     }
 }
 
-// FOR THE AT ASK IFGOR IF ITS OK TO WRAP OR IT NEEDS TO GO OUT OF BOUNDS???????
 template <typename T> 
 T& CLList<T>::at(unsigned index) {
     SLLNode<T>* cur = tail->next;
-    for (int i = 0; i < index; i++) {
+    if (index <= list_size) {
+        for (int i = 0; i < index; i++) {
         cur = cur->next;
+        }
+        return cur->data;
+    } else {
+        throw std::out_of_range("index is out of bounds");
     }
-    return cur->data;
+    
 }
