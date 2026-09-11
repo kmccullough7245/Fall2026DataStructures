@@ -9,27 +9,25 @@ public:
     // No-arg constructor
     CLList();
     // The copy constructor
-    //CLList(const CLList<T>& other);
+    CLList(const CLList<T>& other);
     
     // Destructor
-    //~CLList();
+    ~CLList();
     
     // Assignment operator (=)
-    //CLList<T>& operator=(const CLList<T>& other);
-    // TODO: Implement all commented functions
+    CLList<T>& operator=(const CLList<T>& other);
 
-    // unsigned    size() const;               // Return the size of the list
+    unsigned    size() const;               // Return the size of the list
     bool        empty() const;              // Return true if list is empty
     void        push_front(const T& val);   // Insert the node at the beginning
     void        print() const;              // Print the list
-    // void        push_back(const T& val);    // Insert the node at the end 
-    
+    void        push_back(const T& val);    // Insert the node at the end 
     void        pop_front(void);            // Remove the first node from the list
-    // void        pop_back(void);             // Remove the last node from the list
+    void        pop_back(void);             // Remove the last node from the list
 
-    // void        clear(void);                // Remove all the nodes
+    void        clear(void);                // Remove all the nodes
 
-    // T&          at(unsigned);               // Return the value of the certain node
+    T&          at(unsigned index);               // Return the value of the certain node
 private:
     
     SLLNode<T>* tail;                       // Last node in the linked list
