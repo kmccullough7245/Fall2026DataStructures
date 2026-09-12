@@ -15,7 +15,7 @@ public:
     // TODO:
     const T& front(); // Return first element in queue
     void clear(); // Remove all the elements in queue
-    int size(); // Returns the size of the queue 
+    int size2(); // Returns the size of the queue 
 
 private: 
     T data[size];

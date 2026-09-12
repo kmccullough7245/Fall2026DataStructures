@@ -47,3 +47,20 @@ const T& QueueArray<T, size>::dequeue() {
     queue_size--;
     return data[old_front];
 }
+
+template <typename T, int size>
+const T& QueueArray<T, size>::front() {
+    return data[front_idx];
+}
+
+template <typename T, int size>
+void QueueArray<T, size>::clear() {
+    while(!empty()) {
+        dequeue();
+    }
+}
+
+template <typename T, int size>
+int QueueArray<T, size>::size2() {
+    return queue_size;
+}
