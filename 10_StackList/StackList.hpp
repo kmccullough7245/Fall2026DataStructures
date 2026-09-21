@@ -15,7 +15,16 @@ public:
     const T&    top() const;
     
 private:
-
+    template <typename T>
+    class Node {
+        public:
+            U dara;
+            Node<U>* next;
+            Node(const U & val = U(), Node<U>* n = nullptr)
+                : data(val), next(n) {
+                }
+    };
+    Node<T>* top_node;
 };
 
 #endif
