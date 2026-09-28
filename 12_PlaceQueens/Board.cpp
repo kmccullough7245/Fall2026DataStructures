@@ -36,7 +36,23 @@ void Board::printBoard() const {
 
 
 void Board::placeQueens() {
-    
+    placeQueens(0);
+}
+
+bool Board::placeQueens(int row) {
+    if (row == board_size) {
+        return true;
+    }
+    for (int col = 0; col < board_size; col++) {
+        if(checkPlace(row,col)) {
+            board[row][col] = 'Q';
+            if (placeQueens(row+1)) {
+                return true; 
+            }
+            board[row][col] = '.';
+        }
+    }
+    return false;
 }
 
 
