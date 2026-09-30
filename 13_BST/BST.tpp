@@ -36,3 +36,20 @@ void BST<T>::insert(const T& val) {
     }
 
 }
+
+template <typename T>
+const BTNode<T>* BST<T>::search(const BTNode<T>* node, const T& val) {
+    // Base Case
+    if (!node || node->data == val) {
+        return node;
+    } else if (val < node->data) {
+        return search(node->left, val);
+    } else {
+        return search(node->right, val);
+    }
+}
+
+template<typename T>
+const BTNode<T>* BST<T>::search(const T& val) {
+    search(val);
+}

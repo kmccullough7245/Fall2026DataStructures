@@ -9,6 +9,15 @@ public:
         : data(val), left(l), right(r) {
 
         }
+    bool isLeaf() const {
+        return (!left && !right);
+    }    
+    bool hasOnlyOneChild() const {
+        return (right && !left || !right && left);
+    }
+    bool hasTwoChildred() const {
+        return (right && left);
+    }
     T data;
     BTNode<T>* left;
     BTNode<T>* right;
