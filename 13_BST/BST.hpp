@@ -2,6 +2,7 @@
 #define BST_HPP
 
 #include "BTNode.hpp"
+#include <string>
 
 template <typename T>
 class BST {
@@ -11,28 +12,34 @@ public:
     bool empty() const;
     void insert(const T& val);
 
-    const BTNode<T>* search(const T& val) const;
-    bool contains(const T& val) const;
-
+    bool                contains(const T& val) const; 
+    const BTNode<T>*    search(const T& val) const;
+    const BTNode<T>*    searchParent(const T& val) const;
+    const BTNode<T>*    getMinNode() const;
+    
     void inorder() const;
     void print() const;
+    
+    void remove(const T& val);          // Delete the node from BST
 
-    int height() const;
-    int getBalance() const;
-
-    bool remove(const T& val);
-
-private:
+    void rotateRight(BTNode<T>*& node); 
+    void rotateLeft(BTNode<T>*& node); 
+    void rotateLeftRight(BTNode<T>*& node); 
+    void rotateRightLeft(BTNode<T>*& node); 
     BTNode<T>* root;
-
-    const BTNode<T>* search(const BTNode<T>* node, const T& val) const;
-
+    private:
+    
     void inorder(const BTNode<T>* node) const;
-    void print(const BTNode<T>* node, int spaces) const;
-
+    
+    const BTNode<T>* search(const BTNode<T>* node, const T& val) const;
+    const BTNode<T>* getMinNode(const BTNode<T>* node) const;
+    void print(const std::string& prefix, const BTNode<T>* node, bool isRight) const;
+    void deleteLeaf(BTNode<T>* child, BTNode<T>* parent);
+    void deleteNodeWithOneChild(BTNode<T>* child, BTNode<T>* parent);
+    void deleteNodeWithTwoChildren(BTNode<T>* node);
+    
     int height(const BTNode<T>* node) const;
     int getBalance(const BTNode<T>* node) const;
-    BTNode<T>* remove(BTNode<T>* node, const T& val, bool& removed);
 };
 
 #include "BST.tpp"
